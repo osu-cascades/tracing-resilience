@@ -5,4 +5,17 @@ A collection of childhood/youth resiliency measures for the
 (trauma, resiliency, and adverse childhood experiences) partnership with
 [United Way of Deschutes County](http://www.deschutesunitedway.org).
 
+## Development
+
+TODO
+
+## Test
+
+TODO
+
+## Deployment
+
+TODO
+
+
 (c) 2018 Nathan Struhs, Yong Bakos. All rights reserved.
