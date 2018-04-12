@@ -18,4 +18,4 @@ TODO
 TODO
 
 
-(c) 2018 Nathan Struhs, Yong Bakos. All rights reserved.
+&copy; 2018 Nathan Struhs, Yong Bakos. All rights reserved.
