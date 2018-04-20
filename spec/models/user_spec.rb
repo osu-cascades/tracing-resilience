@@ -4,8 +4,7 @@ RSpec.describe User, type: :model do
   subject(:user) { build(:user) }
 
   describe 'validations' do
-    attributes = [:role, :first_name, :last_name, :organization, :city, :state, :zip]
-    attributes.each do |a|
+    [:role, :first_name, :last_name, :organization, :city, :state, :zip].each do |a|
       it { is_expected.to validate_presence_of(a) }
     end
 

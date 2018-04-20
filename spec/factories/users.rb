@@ -14,4 +14,8 @@ FactoryBot.define do
     # virtual attribute, '1' => has checked terms of service
     terms_of_service '1'
   end
+
+  factory :admin, parent: :user do
+    role 1
+  end
 end
