@@ -8,6 +8,6 @@ RSpec.describe User, type: :model do
       it { is_expected.to validate_presence_of(a) }
     end
 
-    it { is_expected.to validate_acceptance_of(:terms_of_service)}
+    # it { is_expected.to validate_acceptance_of(:terms_of_service)}
   end
 end

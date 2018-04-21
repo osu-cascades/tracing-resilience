@@ -1,0 +1,11 @@
+%h2 Adminstrators
+%hr
+%ul
+  - @admins.each do |user|
+    %li= user.to_s
+
+%h2 Guests
+%hr
+%ul
+  - @guests.each do |user|
+    %li= user.to_s
