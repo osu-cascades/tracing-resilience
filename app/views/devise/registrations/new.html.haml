@@ -6,6 +6,34 @@
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+  .field
+    = f.label :organization
+    %br/
+    = f.text_field :organization
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :state
+    %br/
+    = f.text_field :state
+  .field
+    = f.label :zip
+    %br/
+    = f.text_field :zip
+  .field
+    = f.label :phone
+    %br/
+    = f.telephone_field :phone
+  .field
     = f.label :password
     - if @minimum_password_length
       %em
