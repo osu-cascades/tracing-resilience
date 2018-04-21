@@ -5,6 +5,9 @@
   #nav.collapse.navbar-collapse.justify-content-end
     %ul.navbar-nav
       - if user_signed_in?
+        - if current_user.admin?
+          %li.nav-link
+            = link_to 'Users', users_path
         %li.nav-item.dropdown
           %a#dropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
             = current_user.email
