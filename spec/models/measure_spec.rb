@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Measure, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    [:title, :category].each do |a|
+      it { is_expected.to validate_presence_of(a) }
+    end
+  end
 end
