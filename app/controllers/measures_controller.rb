@@ -5,48 +5,38 @@ class MeasuresController < ApplicationController
     @measures = Measure.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @measure = Measure.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @measure = Measure.new(measure_params)
 
-    respond_to do |format|
-      if @measure.save
-        format.html { redirect_to @measure, notice: 'Measure was successfully created.' }
-        format.json { render :show, status: :created, location: @measure }
-      else
-        format.html { render :new }
-        format.json { render json: @measure.errors, status: :unprocessable_entity }
+    if @measure.save
+      redirect_to @measure
+      flash[:success] = 'Measure was successfully created.'
+    else
+      render :new
       end
-    end
   end
 
   def update
-    respond_to do |format|
-      if @measure.update(measure_params)
-        format.html { redirect_to @measure, notice: 'Measure was successfully updated.' }
-        format.json { render :show, status: :ok, location: @measure }
-      else
-        format.html { render :edit }
-        format.json { render json: @measure.errors, status: :unprocessable_entity }
-      end
+    if @measure.update(measure_params)
+      redirect_to @measure
+      flash[:success] = 'Measure was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @measure.destroy
-    respond_to do |format|
-      format.html { redirect_to measures_url, notice: 'Measure was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to current_user
+    flash[:success] = 'Measure was successfully destroyed.'
   end
 
   private
