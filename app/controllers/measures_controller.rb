@@ -1,6 +1,6 @@
 class MeasuresController < ApplicationController
   before_action :set_measure, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @measures = Measure.all
