@@ -36,7 +36,7 @@ class MeasuresController < ApplicationController
 
   def destroy
     @measure.destroy
-    redirect_to current_user
+    redirect_to measures_path
     flash[:success] = 'Measure was successfully destroyed.'
   end
 
