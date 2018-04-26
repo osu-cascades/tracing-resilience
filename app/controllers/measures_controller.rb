@@ -46,6 +46,6 @@ class MeasuresController < ApplicationController
     end
 
     def measure_params
-      params.fetch(:measure, {})
+      params.require(:measure).permit(:title, :category, :document)
     end
 end
