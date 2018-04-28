@@ -9,5 +9,7 @@
   = f.text_field :title, autofocus: true
   = f.label :category
   = f.select 'category', options_for_select(Measure.category_options)
+  = f.label :document
+  = f.file_field :document
   .actions
     = f.submit 'Save'
