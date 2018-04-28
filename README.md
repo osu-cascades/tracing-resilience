@@ -1,6 +1,6 @@
-# TRACES CYRM Clearing House
+# Tracing Resilience
 
-A collection of childhood/youth resiliency measures for the
+A "clearing house" collection of childhood/youth resilience measures for the
 [Central Oregon TRACES](http://tracesco.org/)
 (trauma, resiliency, and adverse childhood experiences) partnership with
 [United Way of Deschutes County](http://www.deschutesunitedway.org).
