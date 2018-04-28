@@ -19,7 +19,7 @@ class MeasuresController < ApplicationController
   end
 
   def community
-    @measures = Measure.where(category: :community_measure)
+    @measures = Measure.where(category: :community)
   end
 
   def show; end
