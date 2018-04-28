@@ -6,7 +6,13 @@
     %ul.navbar-nav
       - if user_signed_in?
         %li.nav-link
-          = link_to 'Measures', measures_path
+          = link_to 'General', general_measures_path
+        %li.nav-link
+          = link_to 'Individual', individual_measures_path
+        %li.nav-link
+          = link_to 'Relational', relational_measures_path
+        %li.nav-link
+          = link_to 'Community', community_measures_path
         - if current_user.admin?
           %li.nav-link
             = link_to 'Users', users_path
