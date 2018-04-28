@@ -1,8 +1,5 @@
 class Measure < ApplicationRecord
   enum category: [:general, :individual, :relational, :community]
-  has_attached_file :document
-  validates_attachment :document, :content_type => {:content_type => %w(application/pdf application/msword)}
-  validates :document, attachment_presence: true
 
   def self.category_options
     options = {}
@@ -11,6 +8,10 @@ class Measure < ApplicationRecord
     end
     options
   end
+
+  has_attached_file :document
+  validates_attachment :document, :content_type => {:content_type => %w(application/pdf application/msword)}
+  validates :document, attachment_presence: true
 
   validates_presence_of :title, :category
 end

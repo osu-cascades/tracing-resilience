@@ -10,6 +10,7 @@
   %tbody
     - @measures.each do |measure|
       %tr
+        %td= measure.title
         %td= link_to 'Show', measure
         %td= link_to 'Edit', edit_measure_path(measure)
         %td= link_to 'Destroy', measure, method: :delete, data: { confirm: 'Are you sure?' }
