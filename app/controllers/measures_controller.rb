@@ -6,6 +6,22 @@ class MeasuresController < ApplicationController
     @measures = Measure.all
   end
 
+  def general
+    @general_measure = Measure.where(category: :general)
+  end
+
+  def individual
+    @individual_measure = Measure.where(category: :individual)
+  end
+
+  def relational
+    @relational_measure = Measure.where(category: :relational)
+  end
+
+  def community
+    @community_measure = Measure.where(category: :community_measure)
+  end
+
   def show; end
 
   def new
