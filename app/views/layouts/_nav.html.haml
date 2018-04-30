@@ -21,7 +21,7 @@
               .dropdown-item
                 = link_to 'Admin Dashboard', users_path
             .dropdown-item
-              = link_to 'Edit Profile', edit_user_registration_path
+              = link_to 'My Profile', user_path(current_user)
             .dropdown-divider
             .dropdown-item
               = link_to 'Sign Out', destroy_user_session_path, method: :delete

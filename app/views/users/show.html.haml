@@ -1,0 +1,10 @@
+%h1= @user.to_s
+%h3= @user.email
+- if @user.admin?
+  %p Administrator
+%hr
+%p= @user.organization
+%p= @user.city
+%p= @user.state
+%p= @user.zip
+%p= @user.phone
