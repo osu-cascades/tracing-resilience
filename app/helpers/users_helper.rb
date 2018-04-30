@@ -1,4 +1,10 @@
 module UsersHelper
+  def show_user_link(current_user, user)
+    if current_user.admin?
+      "#{user.to_s}".html_safe
+    end
+  end
+
   def delete_user_link(current_user, user)
     if current_user.admin? && current_user != user
       "| #{link_to "Delete", admin_destroy_user_path(user), method: :delete, data: { confirm: "Delete #{user}?" }, class: "lnk-danger", title: "Delete #{user}"}".html_safe

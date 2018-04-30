@@ -4,12 +4,12 @@
 %hr
 %ul
   - @admins.each do |user|
-    %li #{user.to_s} #{delete_user_link(current_user, user)}
+    %li #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)}
     %hr
 
 %h2 Guests
 %hr
 %ul
   - @guests.each do |user|
-    %li #{user.to_s} #{delete_user_link(current_user, user)} #{make_user_admin_link(current_user, user)}
+    %li #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)} #{make_user_admin_link(current_user, user)}
     %hr

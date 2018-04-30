@@ -17,7 +17,6 @@
           %a#dropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
             = current_user.email
           .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "dropdown"}
-
             - if current_user.admin?
               .dropdown-item
                 = link_to 'Admin Dashboard', users_path
