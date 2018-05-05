@@ -72,6 +72,7 @@ a {
 // Buttons
 
 .button {
+  display: inline-block;
   color: white;
   background-color: $primary-color;
   border-radius: 3px;
@@ -85,4 +86,24 @@ a {
     text-decoration: none;
     border: none;
   }
+}
+
+.secondary-button {
+  display: inline-block;
+  color: $primary-color;
+  border-radius: 3px;
+  border: 2px solid $primary-color;
+  background-color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    color: darken($primary-color, 20%);
+    border: 2px solid darken($primary-color, 20%);
+    text-decoration: none;
+  }
+}
+
+.devise-links {
+  margin-top: 15px;
 }

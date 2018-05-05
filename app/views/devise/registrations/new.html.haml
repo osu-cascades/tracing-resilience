@@ -50,5 +50,6 @@
     %p TODO: Add terms of service link
     = f.check_box :terms_of_service
   .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    = f.submit 'Sign up', class: 'button'
+  %br/
+= render 'devise/shared/links'
