@@ -3,3 +3,13 @@
     color: black;
   }
 }
+
+.nav-link {
+  a {
+    color: $primary-color;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
