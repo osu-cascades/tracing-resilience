@@ -17,5 +17,6 @@ FactoryBot.define do
 
   factory :admin, parent: :user do
     role 1
+    email 'admin@example.com'
   end
 end
