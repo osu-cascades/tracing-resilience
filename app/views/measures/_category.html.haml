@@ -1,20 +1,8 @@
 %h1= @category
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @measures.each do |measure|
-      %tr
-        %td= measure.title
-        %td= link_to 'Show', measure
-        %td= link_to 'Edit', edit_measure_path(measure)
-        %td= link_to 'Destroy', measure, method: :delete, data: { confirm: 'Are you sure?' }
-
+%ul.measures-list
+  - @measures.each do |measure|
+    %li
+      = show_measure_links(measure)
 %br
-
 = link_to 'New Measure', new_measure_path, class: 'button'
