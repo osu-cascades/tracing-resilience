@@ -1,7 +1,7 @@
 module UsersHelper
   def show_user_link(current_user, user)
     if current_user.admin?
-      "#{link_to user.to_s, user_path(user)}".html_safe
+      "#{link_to user.to_s, edit_user_path(user)}".html_safe
     end
   end
 
