@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to users_path
     else
-      render 'edit'
+      render :edit
     end
    end
 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def set_admin
-    @user  = User.find(params[:id])
+    @user = User.find(params[:id])
     @user.role = :admin
     @user.save
 
