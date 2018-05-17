@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User views user index' do
+RSpec.describe 'User views user index' do
   include Devise::Test::IntegrationHelpers
 
   context 'when logged in' do

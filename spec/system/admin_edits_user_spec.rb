@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Admin edits user' do
+RSpec.describe 'Admin edits user' do
   include Devise::Test::IntegrationHelpers
 
   context 'when logged in' do
