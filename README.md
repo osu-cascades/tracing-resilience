@@ -7,7 +7,15 @@ A "clearing house" collection of childhood/youth resilience measures for the
 
 ## Development
 
-TODO
+This is a Rails application, and using PostgreSQL is assumed. After cloning this
+repository, create your database:
+
+`rails db:setup`
+
+This will create the database, migrate the schema and create an initial admin
+user for you. Now run the application:
+
+`rails server`
 
 ## Test
 
