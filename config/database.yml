@@ -5,14 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: traces_cyrm_development
+  database: tracing_resilience_development
 
 test:
   <<: *default
-  database: traces_cyrm_test
+  database: tracing_resilience_test
 
 production:
   <<: *default
-  database: traces_cyrm_production
-  username: traces_cyrm
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  url: <%= ENV.fetch('DATABASE_URL') { '' } %>
