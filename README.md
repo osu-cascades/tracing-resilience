@@ -19,7 +19,12 @@ user for you. Now run the application:
 
 ## Test
 
-TODO
+This application uses rspec. Run the test with spring for speed:
+
+`spring rspec`
+
+A _Guardfile_ is also present in this project, and it is pre-configured to
+run rspec with spring. To use it, just run `guard` as usual.
 
 ## Deployment
 
