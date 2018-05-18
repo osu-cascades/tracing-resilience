@@ -3,21 +3,17 @@
   .container-fluid
     .row
       .col-lg-12.col-md-12.col-sm-12.col-xs-12
-        %h1 Tracing Resilience
-        %p Tagline
-.row
-  =link_to 'Sign Up', new_user_registration_path, class: 'button'
-%hr
-.row
+        %h1 Resilience Measures
+        %h2 Measuring strengths to nurture resilience in Central Oregon
+        =link_to 'Browse the Measures »', measures_path, class: 'button'
+.row.sub-banner
   .col-lg-4
-    %h2 One
-    = image_tag '400x400.png'
-    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    %h2 Why?
+    %p Great data inform great decision-making. By using the same measures we can share lessons learned and increase our impact.
   .col-lg-4
-    %h2 Two
-    = image_tag '400x400.png'
-    %p quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+    %h2 Why These Measures?
+    %p A team from OSU-Cascades scanned the literature for measures that explored resilience beyond the individual perspective to include relational, community, and cultural factors. They also looked for something free, short, trustworthy, strengths-based, culturally responsive, and available in multiple languages.
   .col-lg-4
-    %h2 Three
-    = image_tag '400x400.png'
-    %p Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    %h2 How?
+    %p Register for free to agree to the terms of use, and access the measures online.
+    =link_to 'Register and Access the Measures »', new_user_registration_path

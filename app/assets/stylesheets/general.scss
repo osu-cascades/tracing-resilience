@@ -1,9 +1,15 @@
 body {
   font-family: helvetica;
   background-color: #F9F9F9;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-// Links
+a {
+  color: $primary-color;
+  &:visited {
+    color: $primary-color-dark;
+  }
+}
 
 
 
@@ -84,6 +90,9 @@ body {
     background-color: darken($primary-color, 20%);
     text-decoration: none;
     border: none;
+  }
+  &:visited {
+    color: white;
   }
 }
 

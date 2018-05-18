@@ -5,4 +5,24 @@
   background-repeat: no-repeat;
   background-position-x: 30%;
   background-position-y: 50%;
+  padding-top: 3em;
+  text-align: center;
+  color: #FFF;
+  font-family: 'Droid Serif', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  h1 {
+    font-size: 4em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  a {
+    margin-top: 2em;
+  }
+}
+
+.sub-banner {
+  margin-top: 2em;
+  h2 {
+    font-family: 'Droid Serif', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
 }
