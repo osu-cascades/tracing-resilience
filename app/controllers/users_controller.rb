@@ -50,13 +50,6 @@ class UsersController < ApplicationController
 
   private
 
-  def require_admin
-    unless current_user.admin?
-      redirect_to root_path
-      flash[:alert] = 'Restricted action, must be an administrator.'
-    end
-  end
-
   def require_admin_or_current_user
     unless current_user.admin? or current_user == User.find(params[:id])
       redirect_to root_path
