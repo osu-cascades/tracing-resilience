@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Users requests" do
 
   let(:user) { create(:user) }
+  let(:user_attributes) { attributes_for(:user) }
   let(:admin) { create(:admin) }
 
   context "when not logged in" do
@@ -23,18 +24,42 @@ RSpec.describe "Users requests" do
   end
 
   context "when logged in as a registered user" do
-    skip "allows listing and viewing" do
-
+    it "allows listing and viewing" do
+      sign_in user
+      get user_path(user)
+      expect(response).to have_http_status(:ok)
     end
 
-    skip "redirects to root url" do
-
+    it "redirects to root url" do
+      sign_in user
+      get users_path
+      expect(response).to redirect_to(root_path)
+      get edit_user_path(user)
+      expect(response).to redirect_to(root_path)
+      patch user_path(user)
+      expect(response).to redirect_to(root_path)
+      put user_path(user)
+      expect(response).to redirect_to(root_path)
+      delete user_path(user)
+      expect(response).to redirect_to(root_path)
     end
   end
 
   context "when logged in as an admin" do
-    skip "responds to everything" do
-
+    it "responds to everything" do
+      sign_in admin
+      get users_path
+      expect(response).to have_http_status(:ok)
+      get user_path(user)
+      expect(response).to have_http_status(:ok)
+      get edit_user_path(user)
+      expect(response).to have_http_status(:ok)
+      patch user_path(user), params: { user: user_attributes}
+      expect(response).to redirect_to(users_path)
+      put user_path(user), params: { user: user_attributes}
+      expect(response).to redirect_to(users_path)
+      delete user_path(user)
+      expect(response).to redirect_to(users_path)
     end
   end
 
