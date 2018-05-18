@@ -36,8 +36,8 @@ RSpec.describe "Measures requests" do
   end
 
   context "when logged in as a registered user" do
-    skip "allows listing and viewing" do
-
+    it "allows listing and viewing" do
+      sign_in user
     end
 
     skip "redirects to root url" do
