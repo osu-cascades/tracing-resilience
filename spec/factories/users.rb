@@ -13,10 +13,11 @@ FactoryBot.define do
     phone '555-555-5555'
     # virtual attribute, '1' => has checked terms of service
     terms_of_service '1'
-  end
 
-  factory :admin, parent: :user do
-    role 1
-    email 'admin@example.com'
+    factory :admin do
+      role 1
+      email 'admin@example.com'
+    end
+
   end
 end

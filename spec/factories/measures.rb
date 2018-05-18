@@ -1,19 +1,19 @@
 FactoryBot.define do
-  factory :general_measure do
+  factory :measure do
     title "Example Measure Title"
     category 0
-    document ''
-  end
+    document { File.new("#{Rails.root}/spec/support/fixtures/measure.pdf") }
 
-  factory :individual_measure, parent: :general_measure do
-    role 1
-  end
+    factory :individual_measure do
+      category 1
+    end
 
-  factory :relational_measure, parent: :general_measure do
-    role 2
-  end
+    factory :relational_measure do
+      category 2
+    end
 
-  factory :community_measure, parent: :general_measure do
-    role 4
+    factory :community_measure do
+      category 4
+    end
   end
 end
