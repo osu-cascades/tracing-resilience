@@ -2,7 +2,9 @@ FactoryBot.define do
   factory :measure do
     title "Example Measure Title"
     category 0
-    document { File.new("#{Rails.root}/spec/support/fixtures/measure.pdf") }
+    document_file_name { 'fake.pdf' }
+    document_content_type { 'application/pdf' }
+    document_file_size { 1024 }
 
     factory :individual_measure do
       category 1
