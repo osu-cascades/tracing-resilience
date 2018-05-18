@@ -4,6 +4,18 @@ body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
+footer {
+  background-color: #425719;
+  color: #F3FFDE;
+  padding: 1em;
+  margin-top: 2em;
+  p {
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+  }
+}
+
 a {
   color: $primary-color;
   &:visited {
