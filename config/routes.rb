@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       match :individual, via: :get
       match :relational, via: :get
       match :community,  via: :get
+      match :suggestion, via: :get
     end
   end
 end
