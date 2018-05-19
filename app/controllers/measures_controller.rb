@@ -1,7 +1,6 @@
 class MeasuresController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_admin, except: [:index, :show, :general, :individual, :relational, :community, :suggestion]
-  before_action :require_admin, only: [:new, :edit, :update, :create, :destroy]
+  before_action :require_admin, except: [:index, :show, :general, :individual, :relational, :community]
   before_action :set_measure, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -23,8 +22,6 @@ class MeasuresController < ApplicationController
   def community
     @measures = Measure.where(category: :community)
   end
-
-  def suggestion; end
 
   def show; end
 

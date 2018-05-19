@@ -19,8 +19,6 @@ RSpec.describe "Measures requests" do
       expect(response).to redirect_to(new_user_session_path)
       get community_measures_path
       expect(response).to redirect_to(new_user_session_path)
-      get suggestion_measures_path
-      expect(response).to redirect_to(new_user_session_path)
       get measure_path(measure)
       expect(response).to redirect_to(new_user_session_path)
       get new_measure_path
@@ -53,8 +51,6 @@ RSpec.describe "Measures requests" do
       expect(response).to have_http_status(:ok)
       get community_measures_path
       expect(response).to have_http_status(:ok)
-      get suggestion_measures_path
-      expect(response).to have_http_status(:ok)
     end
 
     it "redirects to root url" do
@@ -86,8 +82,6 @@ RSpec.describe "Measures requests" do
       get relational_measures_path
       expect(response).to have_http_status(:ok)
       get community_measures_path
-      expect(response).to have_http_status(:ok)
-      get suggestion_measures_path
       expect(response).to have_http_status(:ok)
       get measure_path(measure)
       expect(response).to have_http_status(:ok)
