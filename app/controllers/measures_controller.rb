@@ -1,6 +1,7 @@
 class MeasuresController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_admin, only: [:new, :edit, :update, :destroy]
+  before_action :require_admin, except: [:index, :show, :general, :individual, :relational, :community, :suggestion]
+  before_action :require_admin, only: [:new, :edit, :update, :create, :destroy]
   before_action :set_measure, only: [:show, :edit, :update, :destroy]
 
   def index
