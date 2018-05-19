@@ -1,5 +1,5 @@
 {
-  "name": "traces-cyrm",
+  "name": "tracing-resilience",
   "private": true,
   "dependencies": {}
 }
