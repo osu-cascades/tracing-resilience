@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+
   before_action :authenticate_user!
-  before_action :require_admin, except: [:show]
-  before_action :require_admin_or_current_user, only: [:show]
+  before_action :require_admin, only: [:index, :destroy, :set_admin]
+  before_action :require_admin_or_current_user, only: [:show, :edit, :update]
 
   def index
     @admins = User.where(role: :admin)
@@ -16,16 +17,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to users_path
+      redirect_to user_path(@user)
       flash[:success] = "#{@user.to_s} successfully updated."
     else
       render :edit
     end
-   end
+  end
 
   def destroy
     @user = User.find(params[:id])
@@ -61,4 +61,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :first_name, :last_name, :organization,
       :city, :state, :zip, :phone)
   end
+
 end

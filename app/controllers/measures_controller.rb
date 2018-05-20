@@ -1,6 +1,6 @@
 class MeasuresController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_admin, except: [:index, :show, :general, :individual, :relational, :community]
+  before_action :require_admin, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_measure, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -39,7 +39,7 @@ class MeasuresController < ApplicationController
       flash[:success] = 'Measure was successfully created.'
     else
       render :new
-      end
+    end
   end
 
   def update
@@ -58,11 +58,13 @@ class MeasuresController < ApplicationController
   end
 
   private
-    def set_measure
-      @measure = Measure.find(params[:id])
-    end
 
-    def measure_params
-      params.require(:measure).permit(:title, :category, :document)
-    end
+  def set_measure
+    @measure = Measure.find(params[:id])
+  end
+
+  def measure_params
+    params.require(:measure).permit(:title, :category, :document)
+  end
+
 end
