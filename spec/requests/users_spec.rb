@@ -12,7 +12,7 @@ RSpec.describe "Users requests" do
       expect(response).to redirect_to(new_user_session_path)
       get user_path(user)
       expect(response).to redirect_to(new_user_session_path)
-      get set_admin_path(user)
+      put set_admin_path(user)
       expect(response).to redirect_to(new_user_session_path)
       get edit_user_path(user)
       expect(response).to redirect_to(new_user_session_path)
@@ -54,7 +54,7 @@ RSpec.describe "Users requests" do
     it "redirects when listing, adminifying, or deleting users" do
       get users_path
       expect(response).to redirect_to(root_path)
-      get set_admin_path(user)
+      put set_admin_path(user)
       expect(response).to redirect_to(root_path)
       delete user_path(user)
       expect(response).to redirect_to(root_path)
@@ -68,7 +68,7 @@ RSpec.describe "Users requests" do
       expect(response).to have_http_status(:ok)
       get user_path(user)
       expect(response).to have_http_status(:ok)
-      get set_admin_path(user)
+      put set_admin_path(user)
       expect(response).to redirect_to(users_path)
       get edit_user_path(user)
       expect(response).to have_http_status(:ok)
