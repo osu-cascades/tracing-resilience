@@ -1,3 +1,4 @@
+%h2 Sender Information
 = @user.to_s
 %br/
 = @user.email
@@ -8,7 +9,10 @@
 %br/
 = @user.phone
 %hr/
-= "Suggestion Title: #{@suggestion.fetch(:title)}"
+%h2 Suggested Measure
+= "Title: #{@suggestion.fetch(:title)}"
+%br/
+= "Category: #{@suggestion.fetch(:category)}"
 %br/
 = "Reference: #{@suggestion.fetch(:reference)}"
 %br/
