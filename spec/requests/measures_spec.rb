@@ -53,7 +53,7 @@ RSpec.describe "Measures requests" do
       expect(response).to have_http_status(:ok)
     end
 
-    it "redirects to root url" do
+    it "redirects when new, edit, create, update and delete" do
       sign_in user
       get new_measure_path
       expect(response).to redirect_to(root_path)

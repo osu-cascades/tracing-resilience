@@ -13,4 +13,5 @@ class RegistrationsController < Devise::RegistrationsController
       :organization, :city, :state, :zip, :phone, :password, :password_confirmation,
       :current_password, :terms_of_service)
   end
+
 end
