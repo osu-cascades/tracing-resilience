@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }, path_prefix: 'my'
   resources :users, only: [:index, :show, :edit, :update]
   match 'users/:id' => 'users#destroy', via: :delete, as: :admin_destroy_user
-  match 'users/set_admin/:id' => 'users#set_admin', via: :get, as: :set_admin
+  match 'users/set_admin/:id' => 'users#set_admin', via: :put, as: :set_admin
 
   resources :measures do
     collection do

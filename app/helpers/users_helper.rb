@@ -13,7 +13,7 @@ module UsersHelper
 
   def make_user_admin_link(current_user, user)
     if current_user.admin? && current_user != user
-       "| #{link_to "Enable admin privileges", set_admin_path(user),  method: :get, data: { confirm: "Make #{user} an adminstrator?" }}".html_safe
+       "| #{link_to "Enable admin privileges", set_admin_path(user),  method: :put, data: { confirm: "Make #{user} an adminstrator?" }}".html_safe
     end
   end
 end
