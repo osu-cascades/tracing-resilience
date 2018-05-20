@@ -1,0 +1,12 @@
+= @user.to_s
+%br/
+= @user.email
+%br/
+= "Organization: #{@user.organization}"
+-# todo: implement user helper for full address
+%hr/
+= "Suggestion Title: #{@suggestion.fetch(:title)}"
+%br/
+= "Reference: #{@suggestion.fetch(:reference)}"
+%br/
+= "Description: #{@suggestion.fetch(:description)}"

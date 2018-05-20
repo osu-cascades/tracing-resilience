@@ -18,8 +18,8 @@ RSpec.describe "Measures requests" do
       sign_in user
       get suggestion_path
       expect(response).to have_http_status(:ok)
-      post suggestion_path
-      expect(response).to have_http_status(:ok)
+      post suggestion_path, params: { suggestion: {title: 'Title', reference: 'Example', collection: 'Example', description: 'Example'} }
+      expect(response).to redirect_to(root_path)
     end
   end
 
