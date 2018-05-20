@@ -3,7 +3,10 @@
 = @user.email
 %br/
 = "Organization: #{@user.organization}"
--# todo: implement user helper for full address
+%br/
+= "#{@user.city}, #{@user.state}"
+%br/
+= @user.phone
 %hr/
 = "Suggestion Title: #{@suggestion.fetch(:title)}"
 %br/
