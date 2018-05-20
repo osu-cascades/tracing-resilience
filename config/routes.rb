@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       match :community,  via: :get
     end
   end
+  match '/suggestion' => 'suggestions#suggestion', via: [:get, :post]
 end
