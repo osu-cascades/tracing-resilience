@@ -18,8 +18,9 @@ footer {
 
 a {
   color: $primary-color;
-  &:visited {
+  &:hover {
     color: $primary-color-dark;
+    text-decoration: none;
   }
 }
 
