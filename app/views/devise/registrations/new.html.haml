@@ -31,8 +31,20 @@
       = f.password_field :password_confirmation, autocomplete: "off"
       .form-group
         .form-check
-          = f.check_box :terms_of_service, class: 'form-check-input'
-          = f.label :terms_of_service, "I agree to the #{link_to 'Terms of Service', root_path}.".html_safe, class: 'form-check-label'
+          = f.check_box :terms_of_service, class: 'form-check-input', id: 'terms-of-service-checkbox'
+          = f.label :terms_of_service, "I agree to the #{link_to 'Terms of Service', '#', 'data-target' => '#terms-of-service', 'data-toggle' => 'modal'}.".html_safe, class: 'form-check-label'
       .actions
         = f.submit 'Register', class: 'button'
     = render 'devise/shared/links'
+
+#terms-of-service.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "terms-of-service", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#exampleModalLongTitle.modal-title Terms of Service
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        TODO: include terms of service
+      .modal-footer
+        %button.button{"data-dismiss" => "modal", type: "button", id: 'accept-terms-of-service'} Accept
