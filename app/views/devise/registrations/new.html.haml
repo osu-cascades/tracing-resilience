@@ -50,6 +50,6 @@
     = f.check_box :terms_of_use
     = f.label :terms_of_use, "I agree to the #{link_to 'terms of use', terms_path}.".html_safe
   .actions
-    = f.submit 'Register', class: 'button'
+    = f.submit 'Register', class: 'btn btn-primary'
   %br/
 = render 'devise/shared/links'
