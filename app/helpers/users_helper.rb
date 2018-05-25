@@ -7,7 +7,7 @@ module UsersHelper
 
   def delete_user_link(current_user, user)
     if current_user.admin? && current_user != user
-      "| #{link_to "Delete", admin_destroy_user_path(user), method: :delete, data: { confirm: "Delete #{user}?" }, class: "lnk-danger", title: "Delete #{user}"}".html_safe
+      "| #{link_to "Delete", user_path(user), method: :delete, data: { confirm: "Delete #{user}?" }, class: "lnk-danger", title: "Delete #{user}"}".html_safe
     end
   end
 
