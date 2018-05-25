@@ -46,9 +46,9 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
   .field
-    = f.label :terms_of_use
-    %p TODO: Add terms of use text
+    %p The resources provided here are for research, educational, and non-commercial purposes only. By registering, you are agreeing to abide by the #{link_to 'terms of use', terms_path}.
     = f.check_box :terms_of_use
+    = f.label :terms_of_use, "I agree to the #{link_to 'terms of use', terms_path}.".html_safe
   .actions
     = f.submit 'Register', class: 'button'
   %br/

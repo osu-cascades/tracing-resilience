@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   match '/suggestion' => 'suggestions#suggestion', via: [:get, :post]
 
+  get '/terms' => 'static#terms'
 end
