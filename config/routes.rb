@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-  match '/suggestion' => 'suggestions#suggestion', via: [:get, :post]
-
+  resources :suggestions, only: [:new, :create]
   get '/terms' => 'static#terms'
 end

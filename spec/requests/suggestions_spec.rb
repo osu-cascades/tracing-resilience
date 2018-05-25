@@ -6,9 +6,9 @@ RSpec.describe "Measures requests" do
 
   context "when not logged in" do
     it "redirects to the sign in path" do
-      get suggestion_path
+      get new_suggestion_path
       expect(response).to redirect_to(new_user_session_path)
-      post suggestion_path
+      post suggestions_path
       expect(response).to redirect_to(new_user_session_path)
     end
   end
@@ -16,9 +16,9 @@ RSpec.describe "Measures requests" do
   context "when logged in as a guest" do
     it "allows listing and viewing" do
       sign_in user
-      get suggestion_path
+      get new_suggestion_path
       expect(response).to have_http_status(:ok)
-      post suggestion_path, params: { suggestion: {title: 'Title', category: :general, reference: 'Example', description: 'Example'} }
+      post suggestions_path, params: { suggestion: {title: 'Title', category: :general, reference: 'Example', description: 'Example'} }
       expect(response).to redirect_to(root_path)
     end
   end
