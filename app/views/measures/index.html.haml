@@ -1,3 +1,23 @@
-%h1 Featured Measure
+- provide(:title, 'Resilience Measures')
+%h1.display-4 Featured Measure
+%h2 TODO
 
-= link_to 'Have a suggestion for a new measure?', new_suggestion_path, class: 'btn btn-primary'
+.row.sub-banner
+  .col-lg-3
+    %h2 General
+    %p TODO
+    %p= link_to 'Browse general measures »', general_measures_path
+  .col-lg-3
+    %h2 Individual
+    %p TODO
+    %p= link_to 'Browse individual measures »', individual_measures_path
+  .col-lg-3
+    %h2 Relational
+    %p TODO
+    %p= link_to 'Browse relational measures »', relational_measures_path
+  .col-lg-3
+    %h2 Community
+    %p TODO
+    %p= link_to 'Browse community measures »', community_measures_path
+
+%p.text-center.my-5= link_to 'Have a suggestion for a new measure?', new_suggestion_path, class: 'btn btn-primary'
