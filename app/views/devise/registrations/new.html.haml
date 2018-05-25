@@ -1,55 +1,43 @@
 - provide(:title, 'Register')
-%h2 Register
+
+%h1.display-4 Register
+
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .field
+  .form-group
     = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
+    = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+  .form-group
     = f.label :first_name
-    %br/
-    = f.text_field :first_name
-  .field
+    = f.text_field :first_name, class: 'form-control'
+  .form-group
     = f.label :last_name
-    %br/
-    = f.text_field :last_name
-  .field
+    = f.text_field :last_name, class: 'form-control'
+  .form-group
     = f.label :organization
-    %br/
-    = f.text_field :organization
-  .field
+    = f.text_field :organization, class: 'form-control'
+  .form-group
     = f.label :city
-    %br/
-    = f.text_field :city
-  .field
+    = f.text_field :city, class: 'form-control'
+  .form-group
     = f.label :state
-    %br/
-    = f.text_field :state
-  .field
+    = f.text_field :state, class: 'form-control'
+  .form-group
     = f.label :zip
-    %br/
-    = f.text_field :zip
-  .field
+    = f.text_field :zip, class: 'form-control'
+  .form-group
     = f.label :phone
-    %br/
-    = f.telephone_field :phone
-  .field
+    = f.telephone_field :phone, class: 'form-control'
+  .form-group
     = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
+    %em (#{@minimum_password_length} characters minimum)
+    = f.password_field :password, autocomplete: 'off', class: 'form-control'
+  .form-group
     = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
+    = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+  .form-group-row
     %p The resources provided here are for research, educational, and non-commercial purposes only. By registering, you are agreeing to abide by the #{link_to 'terms of use', terms_path}.
     = f.check_box :terms_of_use
     = f.label :terms_of_use, "I agree to the #{link_to 'terms of use', terms_path}.".html_safe
-  .actions
-    = f.submit 'Register', class: 'btn btn-primary'
-  %br/
-= render 'devise/shared/links'
+  .mt-4= f.submit 'Register', class: 'btn btn-primary'
+  %p.my-5 Already registered? #{link_to 'Sign In', new_user_session_path}.
