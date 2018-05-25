@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :users, except: [:new, :create]
-  put 'users/set_admin/:id' => 'users#set_admin', as: :set_admin
+  put 'users/:id/elevate' => 'users#elevate', as: :elevate_user
 
   resources :measures do
     collection do
