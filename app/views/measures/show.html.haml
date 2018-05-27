@@ -2,7 +2,9 @@
 %h1= @measure.title
 %h3= @measure.category.capitalize
 %hr
-%iframe{:src => "#{@measure.document.url}", style: 'width: 500px; height: 500px;'}
+%iframe{:src => "#{url_for(@measure.document)}", style: 'width: 500px; height: 500px;'}
+%hr
+= image_tag @measure.document.preview(resize_to_limit: [500, 500])
 %br
 %hr
 = link_to 'Edit', edit_measure_path(@measure), class: 'btn btn-primary'
