@@ -10,6 +10,6 @@
   = f.label :category
   = f.select 'category', options_for_select(Measure.category_options)
   = f.label :document
-  = f.file_field :document
+  = f.file_field :document, accept: 'application/pdf'
   .actions
     = f.submit 'Save', class: 'btn btn-primary'
