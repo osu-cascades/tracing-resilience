@@ -2,9 +2,9 @@ FactoryBot.define do
   factory :measure do
     title "Example Measure Title"
     category :general
-    document_file_name { 'fake.pdf' }
-    document_content_type { 'application/pdf' }
-    document_file_size { 1024 }
+    after(:build) do |measure|
+      measure.document.attach(io: File.open(Rails.root.join('spec', 'factories', 'attachments', 'example.pdf')), filename: 'example.pdf', content_type: 'application/pdf')
+    end
 
     factory :individual_measure do
       category :individual
