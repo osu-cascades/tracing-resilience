@@ -11,8 +11,7 @@ FactoryBot.define do
     state 'Example State'
     zip '97701'
     phone '555-555-5555'
-    # virtual attribute, '1' => has checked terms of service
-    terms_of_service '1'
+    terms_of_use '1' # validates_acceptance_of :terms_of_use
 
     factory :admin do
       role 1

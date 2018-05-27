@@ -2,20 +2,19 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-  devise_for :users, controllers: { registrations: 'registrations' }, path_prefix: 'my'
-  resources :users, only: [:index, :show, :edit, :update]
-  match 'users/:id' => 'users#destroy', via: :delete, as: :admin_destroy_user
-  match 'users/set_admin/:id' => 'users#set_admin', via: :put, as: :set_admin
+  devise_for :users, controllers: { registrations: 'registrations' }
+  resources :users, except: [:new, :create]
+  put 'users/:id/elevate' => 'users#elevate', as: :elevate_user
 
   resources :measures do
     collection do
-      match :general,    via: :get
-      match :individual, via: :get
-      match :relational, via: :get
-      match :community,  via: :get
+      get :general
+      get :individual
+      get :relational
+      get :community
     end
   end
 
-  match '/suggestion' => 'suggestions#suggestion', via: [:get, :post]
-
+  resources :suggestions, only: [:new, :create]
+  get '/terms' => 'static#terms'
 end

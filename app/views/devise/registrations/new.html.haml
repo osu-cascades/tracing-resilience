@@ -1,4 +1,5 @@
 - provide(:title, 'Register')
+<<<<<<< HEAD
 .row
   .col-md-3
   .col-md-6
@@ -48,3 +49,47 @@
         TODO: include terms of service
       .modal-footer
         %button.button{"data-dismiss" => "modal", type: "button", id: 'accept-terms-of-service'} Accept
+=======
+
+%h1.display-4 Register
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .form-group
+    = f.label :email
+    = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+  .form-group
+    = f.label :first_name
+    = f.text_field :first_name, class: 'form-control'
+  .form-group
+    = f.label :last_name
+    = f.text_field :last_name, class: 'form-control'
+  .form-group
+    = f.label :organization
+    = f.text_field :organization, class: 'form-control'
+  .form-group
+    = f.label :city
+    = f.text_field :city, class: 'form-control'
+  .form-group
+    = f.label :state
+    = f.text_field :state, class: 'form-control'
+  .form-group
+    = f.label :zip
+    = f.text_field :zip, class: 'form-control'
+  .form-group
+    = f.label :phone
+    = f.telephone_field :phone, class: 'form-control'
+  .form-group
+    = f.label :password
+    %em (#{@minimum_password_length} characters minimum)
+    = f.password_field :password, autocomplete: 'off', class: 'form-control'
+  .form-group
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+  .form-group-row
+    %p The resources provided here are for research, educational, and non-commercial purposes only. By registering, you are agreeing to abide by the #{link_to 'terms of use', terms_path}.
+    = f.check_box :terms_of_use
+    = f.label :terms_of_use, "I agree to the #{link_to 'terms of use', terms_path}.".html_safe
+  .mt-4= f.submit 'Register', class: 'btn btn-primary'
+  %p.my-5 Already registered? #{link_to 'Sign In', new_user_session_path}.
+>>>>>>> e09c15ad80e2d8c81e59f0e02ad1138345045a26

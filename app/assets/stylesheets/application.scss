@@ -1,7 +1,162 @@
 @import "bootstrap";
-@import "variables";
-@import "general";
-@import "layout";
-@import "nav";
-@import "forms";
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,600');
+
+$primary-color: #88B14B;
+$primary-color-dark: #425719;
+$secondary-color: #B07E08;
+
+body {
+  font-family: helvetica;
+  background-color: #F9F9F9;
+}
+
+p {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+footer {
+  background-color: #425719;
+  color: #F3FFDE;
+  padding: 1em;
+  margin-top: 2em;
+  p {
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+  }
+}
+
+a {
+  color: $primary-color;
+  &:visited {
+    color: $primary-color-dark;
+  }
+}
+
+.navbar {
+  background-color: #FFF;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.nav-item {
+  a {
+    color: black;
+  }
+}
+
+.nav-link {
+  a {
+    color:  $primary-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+form.new_user, form.edit_user {
+  width: 50%;
+  margin-bottom: 100px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  &:hover, &:focus {
+    color: white;
+    background-color: darken($primary-color, 20%) !important;
+    border-color: darken($primary-color, 20%) !important;
+  }
+  &:active {
+    color: white;
+    background-color: darken($primary-color, 20%) !important;
+    border-color: darken($primary-color, 20%) !important;
+  }
+  &:visited {
+    color: white;
+  }
+}
+
+
+// Flash messages
+
+.alert {
+  padding: 10px;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+.alert-alert, .alert-error {
+  @extend .alert-danger
+}
+
+.alert-notice {
+  @extend .alert-success
+}
+
+.alert-heading {
+  margin: 0 0 10px 0;
+}
+
+
+// Home
+
+.banner {
+  width: 100%;
+  height: 400px;
+  background-image: image-url('banner.jpg');
+  background-repeat: no-repeat;
+  background-position-x: 30%;
+  background-position-y: 50%;
+  padding-top: 3em;
+  text-align: center;
+  color: #FFF;
+  font-family: 'Droid Serif', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  h1 {
+    font-size: 4em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  a {
+    margin-top: 2em;
+  }
+}
+
+.sub-banner {
+  margin-top: 2em;
+  h2 {
+    font-family: 'Droid Serif', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+}
+
+
+// Measures
+
+.measures-list {
+  li {
+    a {
+      color: black;
+    }
+  }
+}
+
+
+// Users
+
+.user-list {
+  li {
+    a {
+      color: black;
+    }
+  }
+}

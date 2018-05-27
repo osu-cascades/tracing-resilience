@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :require_admin, only: [:index, :destroy, :set_admin]
+  before_action :require_admin, only: [:index, :destroy, :elevate]
   before_action :require_admin_or_current_user, only: [:show, :edit, :update]
 
   def index
@@ -37,11 +37,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def set_admin
+  def elevate
     @user = User.find(params[:id])
     @user.role = :admin
-    @user.save
-
     if @user.save
       redirect_to users_path
       flash[:success] = "#{@user} is now an administrator."

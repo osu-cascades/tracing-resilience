@@ -3,11 +3,11 @@ class SuggestionsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
-  def suggestion
-    if request.post?
-      SuggestionMailer.suggestion(current_user, suggestion_params).deliver
-      redirect_to root_path
-    end
+  def new; end
+
+  def create
+    SuggestionMailer.suggestion(current_user, suggestion_params).deliver
+    redirect_to root_path
   end
 
   private
