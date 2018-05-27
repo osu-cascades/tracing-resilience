@@ -9,9 +9,9 @@ class Measure < ApplicationRecord
     options
   end
 
-  has_attached_file :document
-  validates_attachment :document, :content_type => {:content_type => %w(application/pdf application/msword)}
-  validates :document, attachment_presence: true
+  has_one_attached :document
+  # validates_attachment :document, :content_type => {:content_type => %w(application/pdf application/msword)}
+  # validates :document, attachment_presence: true
 
   validates_presence_of :title, :category
 end
