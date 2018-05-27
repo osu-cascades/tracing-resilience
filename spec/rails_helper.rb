@@ -17,9 +17,18 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
 end
 
+RSpec::Matchers.define :have_attached_file do |name|
+  matches do |record|
+    file = record.send(name)
+    file.respond_to?(:variant) && file.respond_to?(:attach)
+  end
+end
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
   end
 end
+
+
