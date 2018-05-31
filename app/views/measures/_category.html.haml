@@ -1,6 +1,3 @@
 %ul.measures-list
   - @measures.each do |measure|
-    %li
-      = show_measure_links(measure)
-%br
-= link_to 'New Measure', new_measure_path, class: 'btn btn-primary'
+    %li= show_measure_links(measure)
