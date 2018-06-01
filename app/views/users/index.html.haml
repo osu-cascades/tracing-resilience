@@ -5,9 +5,16 @@
 %h2 Adminstrators
 %ul#admins.list-group
   - @admins.each do |user|
-    %li.list-group-item{id: "user_#{user.id}"} #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)}
+    %li.list-group-item{id: "user_#{user.id}"}
+      = link_to user.to_s, edit_user_path(user)
+      - if current_user != user
+        = link_to 'Delete', user_path(user), method: :delete, data: { confirm: "Delete #{user}?" }, class: 'btn btn-sm btn-outline-danger', title: "Delete #{user}"
 
 %h2 Guests
 %ul#guests.list-group
   - @guests.each do |user|
-    %li.list-group-item{id: "user_#{user.id}"} #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)} #{make_user_admin_link(current_user, user)}
+    %li.list-group-item{id: "user_#{user.id}"}
+      = link_to user.to_s, edit_user_path(user)
+      - if current_user != user
+        = link_to 'Delete', user_path(user), method: :delete, data: { confirm: "Delete #{user}?" }, class: 'btn btn-sm btn-outline-danger', title: "Delete #{user}"
+      = link_to "Make admin", elevate_user_path(user), method: :put, data: { confirm: "Make #{user} an adminstrator?" }
