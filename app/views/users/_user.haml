@@ -1,0 +1,6 @@
+%li.list-group-item{id: "user_#{user.id}"}
+  = link_to user.to_s, edit_user_path(user)
+  - if current_user != user
+    = link_to 'Delete', user_path(user), method: :delete, data: { confirm: "Delete #{user}?" }, class: 'btn btn-sm btn-outline-danger', title: "Delete #{user}"
+  - unless user.admin?
+    = link_to "Make admin", elevate_user_path(user), method: :put, data: { confirm: "Make #{user} an adminstrator?" }, class: 'btn btn-sm btn-outline-secondary'
