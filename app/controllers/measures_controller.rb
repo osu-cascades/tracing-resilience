@@ -1,4 +1,5 @@
 class MeasuresController < ApplicationController
+
   before_action :authenticate_user!
   before_action :require_admin, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_measure, only: [:show, :edit, :update, :destroy]
