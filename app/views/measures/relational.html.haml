@@ -4,4 +4,11 @@
 
 %h1.display-4 Relational Measures
 
-= render 'category'
+%ul.list-group
+  - @measures.each do |measure|
+    %li.list-group-item.my-2
+      %h3= link_to measure.title, measure
+      - if current_user.admin?
+        = link_to 'Edit', edit_measure_path(measure), class: 'btn btn-sm btn-outline-secondary'
+        |
+        = link_to 'Destroy', measure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'
