@@ -4,11 +4,7 @@ class Measure < ApplicationRecord
   validates_presence_of :title, :category
 
   def self.category_options
-    options = {}
-    Measure.categories.keys.each do |k|
-      options[k.to_s.capitalize] = k
-    end
-    options
+    Measure.categories.keys.map { |k| [k.to_s.capitalize, k] }.to_h
   end
 
 end
