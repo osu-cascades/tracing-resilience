@@ -1,3 +1,7 @@
+- provide(:title, 'General Resilience Measures')
+
+.float-right= link_to 'Edit profile', edit_user_path(@user)
+
 %h1= @user.to_s
 %h3= @user.email
 - if @user.admin?

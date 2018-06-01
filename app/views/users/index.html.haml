@@ -1,15 +1,13 @@
 - provide(:title, 'All Users')
+
 %h1 All Users
+
 %h2 Adminstrators
-%hr
-%ul.user-list
+%ul#admins.list-group
   - @admins.each do |user|
-    %li #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)}
-    %hr
+    %li.list-group-item{id: "user_#{user.id}"} #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)}
 
 %h2 Guests
-%hr
-%ul.user-list
+%ul#guests.list-group
   - @guests.each do |user|
-    %li #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)} #{make_user_admin_link(current_user, user)}
-    %hr
+    %li.list-group-item{id: "user_#{user.id}"} #{show_user_link(current_user, user)} #{delete_user_link(current_user, user)} #{make_user_admin_link(current_user, user)}
