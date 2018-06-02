@@ -1,7 +1,6 @@
 - provide(:title, 'Resilience Measures')
 
-- if current_user.admin?
-  .float-right= link_to 'Add a new measure', new_measure_path, class: 'btn btn-primary'
+= show_new_measure_link_if_admin
 
 %h1.display-4 Featured Measure
 %h2 TODO
