@@ -9,5 +9,8 @@
   .form-group
     = f.label :document
     = f.file_field :document, accept: 'application/pdf', class: 'form-control'
+  .form-group
+    = f.check_box :featured
+    = f.label :featured, 'Featured?'
   .actions
     = f.submit 'Save', class: 'btn btn-primary'
