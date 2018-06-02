@@ -3,6 +3,7 @@
 %h1.display-4= "Edit #{@user.to_s} Profile"
 
 = form_for(@user) do |f|
+  = form_errors_for(@user)
   .form-group
     = f.label :email
     = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
