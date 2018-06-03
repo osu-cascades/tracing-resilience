@@ -34,13 +34,6 @@ class MeasuresController < ApplicationController
 
   def create
     @measure = Measure.new(measure_params)
-    byebug
-    if @measure.featured == true
-      print "here ---------------------------"
-      old_featured_measure = Measure.where(featured: true)
-      old_featured_measure.featured = false
-      old_featured_measure.save
-    end
 
     if @measure.save
       redirect_to @measure
@@ -52,11 +45,6 @@ class MeasuresController < ApplicationController
 
   def update
     if @measure.update(measure_params)
-      if @measure.featured == true
-        old_featured_measure = Measure.where(featured: true)
-        old_featured_measure.featured = false
-        old_featured_measure.save
-      end
       redirect_to @measure
       flash[:success] = 'Measure was successfully updated.'
     else
