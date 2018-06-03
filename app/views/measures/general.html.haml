@@ -1,6 +1,6 @@
 - provide(:title, 'General Resilience Measures')
 
-= show_new_measure_link_if_admin
+= new_measure_link if current_user.admin?
 
 %h1.display-4 General Measures
 
