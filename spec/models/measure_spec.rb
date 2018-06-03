@@ -20,4 +20,8 @@ RSpec.describe Measure, type: :model do
     end
   end
 
+  it 'has a string representation consisting of its title' do
+    expect(Measure.new(title: 'FAKE').to_s).to eq 'FAKE'
+  end
+
 end

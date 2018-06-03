@@ -7,4 +7,8 @@ class Measure < ApplicationRecord
     Measure.categories.keys.map { |k| [k.to_s.capitalize, k] }.to_h
   end
 
+  def to_s
+    title
+  end
+
 end
