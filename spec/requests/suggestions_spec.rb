@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Measures requests" do
+RSpec.describe "Suggestions requests" do
 
   let(:user) { create(:user) }
 
@@ -14,7 +14,7 @@ RSpec.describe "Measures requests" do
   end
 
   context "when logged in as a guest" do
-    it "allows listing and viewing" do
+    it "allows new-ing and creating" do
       sign_in user
       get new_suggestion_path
       expect(response).to have_http_status(:ok)
