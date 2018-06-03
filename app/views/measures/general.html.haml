@@ -4,7 +4,7 @@
 
 %h1.display-4 General Measures
 
-= show_measure_count
+= pluralize(@measures.size, 'Measure')
 
 %ul.list-group
   - @measures.each do |measure|

@@ -6,10 +6,4 @@ module MeasuresHelper
     end
   end
 
-  def show_measure_count
-    count = @measure_count || 0
-    measure_count = "#{count} Measure".html_safe
-    unless count == 1 then measure_count << 's' end
-    measure_count.html_safe
-  end
 end

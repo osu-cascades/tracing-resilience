@@ -10,22 +10,18 @@ class MeasuresController < ApplicationController
 
   def general
     @measures = Measure.where(category: :general)
-    @measure_count = @measures.size
   end
 
   def individual
     @measures = Measure.where(category: :individual)
-    @measure_count = @measures.size
   end
 
   def relational
     @measures = Measure.where(category: :relational)
-    @measure_count = @measures.size
   end
 
   def community
     @measures = Measure.where(category: :community)
-    @measure_count = @measures.size
   end
 
   def show; end
@@ -38,6 +34,13 @@ class MeasuresController < ApplicationController
 
   def create
     @measure = Measure.new(measure_params)
+    byebug
+    if @measure.featured == true
+      print "here ---------------------------"
+      old_featured_measure = Measure.where(featured: true)
+      old_featured_measure.featured = false
+      old_featured_measure.save
+    end
 
     if @measure.save
       redirect_to @measure
@@ -49,6 +52,11 @@ class MeasuresController < ApplicationController
 
   def update
     if @measure.update(measure_params)
+      if @measure.featured == true
+        old_featured_measure = Measure.where(featured: true)
+        old_featured_measure.featured = false
+        old_featured_measure.save
+      end
       redirect_to @measure
       flash[:success] = 'Measure was successfully updated.'
     else
@@ -69,7 +77,7 @@ class MeasuresController < ApplicationController
   end
 
   def measure_params
-    params.require(:measure).permit(:title, :category, :document)
+    params.require(:measure).permit(:title, :category, :document, :featured)
   end
 
 end
