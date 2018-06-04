@@ -10,22 +10,18 @@ class MeasuresController < ApplicationController
 
   def general
     @measures = Measure.where(category: :general)
-    @measure_count = @measures.size
   end
 
   def individual
     @measures = Measure.where(category: :individual)
-    @measure_count = @measures.size
   end
 
   def relational
     @measures = Measure.where(category: :relational)
-    @measure_count = @measures.size
   end
 
   def community
     @measures = Measure.where(category: :community)
-    @measure_count = @measures.size
   end
 
   def show; end
@@ -69,7 +65,7 @@ class MeasuresController < ApplicationController
   end
 
   def measure_params
-    params.require(:measure).permit(:title, :category, :document)
+    params.require(:measure).permit(:title, :category, :document, :featured)
   end
 
 end
