@@ -7,7 +7,7 @@ class SuggestionsController < ApplicationController
 
   def create
     SuggestionMailer.suggestion(current_user, suggestion_params).deliver
-    redirect_to root_path
+    redirect_to root_path, notice: 'Thank you, your suggestion has been sent.'
   end
 
   private

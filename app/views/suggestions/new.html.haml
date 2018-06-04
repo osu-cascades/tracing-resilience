@@ -1,16 +1,19 @@
-%h1 Suggestion
+- provide(:title, 'Suggest a Resilience Measure')
+
+%h1.display-4 Suggest a Resilience Measure
 
 = form_for :suggestion, url: suggestions_path do |f|
-  = f.label :title
-  = f.text_field :title
-  %br/
-  = f.label :category
-  = f.select :category, options_for_select(Measure.category_options)
-  %br/
-  = f.label :reference
-  = f.text_field :reference
-  %br/
-  = f.label :description
-  = f.text_area :description
-  %br/
-  = f.submit 'Submit', class: 'btn btn-primary'
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :category
+    = f.select :category, options_for_select(Measure.category_options), {include_blank: 'Choose...'}, {class: 'form-control'}
+  .form-group
+    = f.label :reference
+    = f.text_field :reference, class: 'form-control'
+  .form-group
+    = f.label :description
+    = f.text_area :description, rows: '10', class: 'form-control'
+  .form-group
+    = f.submit 'Submit', class: 'btn btn-primary form-control'
