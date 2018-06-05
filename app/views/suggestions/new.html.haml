@@ -16,4 +16,7 @@
     = f.label :description
     = f.text_area :description, rows: '10', class: 'form-control'
   .form-group
+    = flash[:recaptcha_error]
+    = recaptcha_tags
+  .form-group
     = f.submit 'Submit', class: 'btn btn-primary form-control'
