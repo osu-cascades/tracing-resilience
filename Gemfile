@@ -10,6 +10,7 @@ end
 gem "aws-sdk-s3", require: false
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
+gem 'figaro'
 gem 'haml'
 gem "haml-rails", "~> 1.0"
 gem 'jbuilder', '~> 2.5'

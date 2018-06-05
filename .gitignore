@@ -13,3 +13,5 @@
 public/system
 
 storage
+# Ignore application configuration
+/config/application.yml
