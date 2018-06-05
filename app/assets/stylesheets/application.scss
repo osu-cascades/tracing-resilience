@@ -95,7 +95,7 @@ form {
   }
 }
 
-.alert-alert, .alert-error {
+.alert-alert, .alert-error, .alert-recaptcha_error {
   @extend .alert-danger
 }
 

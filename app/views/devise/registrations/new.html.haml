@@ -39,5 +39,8 @@
     %p The resources provided here are for research, educational, and non-commercial purposes only. By registering, you are agreeing to abide by the #{link_to 'terms of use', terms_path}.
     = f.check_box :terms_of_use
     = f.label :terms_of_use, "I agree to the #{link_to 'terms of use', terms_path}.".html_safe
+  .form-group
+    = flash[:recaptcha_error]
+    = recaptcha_tags
   .mt-4= f.submit 'Register', class: 'btn btn-primary'
   %p.my-5 Already registered? #{link_to 'Sign In', new_user_session_path}.
