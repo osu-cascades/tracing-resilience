@@ -5,7 +5,7 @@
     = f.text_field :title, autofocus: true, class: 'form-control'
   .form-group
     = f.label :category
-    = f.select 'category', options_for_select(Measure.category_options), {include_blank: 'Choose...'}, {class: 'form-control'}
+    = f.select 'category', options_for_select(Measure.category_options, selected: @measure.category), {include_blank: 'Choose...'}, {class: 'form-control'}
   .form-group
     = f.label :document
     = f.file_field :document, accept: 'application/pdf', class: 'form-control-file'
