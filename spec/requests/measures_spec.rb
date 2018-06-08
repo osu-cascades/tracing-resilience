@@ -11,13 +11,7 @@ RSpec.describe "Measures requests" do
     it "redirects to the sign in path" do
       get measures_path
       expect(response).to redirect_to(new_user_session_path)
-      get general_measures_path
-      expect(response).to redirect_to(new_user_session_path)
-      get individual_measures_path
-      expect(response).to redirect_to(new_user_session_path)
-      get relational_measures_path
-      expect(response).to redirect_to(new_user_session_path)
-      get community_measures_path
+      get category_measures_path(category: :general)
       expect(response).to redirect_to(new_user_session_path)
       get measure_path(measure)
       expect(response).to redirect_to(new_user_session_path)
@@ -43,14 +37,8 @@ RSpec.describe "Measures requests" do
       expect(response).to have_http_status(:ok)
       get measure_path(measure)
       expect(response).to have_http_status(:ok)
-      # get general_measures_path
-      # expect(response).to have_http_status(:ok)
-      # get individual_measures_path
-      # expect(response).to have_http_status(:ok)
-      # get relational_measures_path
-      # expect(response).to have_http_status(:ok)
-      # get community_measures_path
-      # expect(response).to have_http_status(:ok)
+      get category_measures_path(category: :general)
+      expect(response).to have_http_status(:ok)
     end
 
     it "redirects when new, edit, create, update and delete" do
@@ -75,28 +63,31 @@ RSpec.describe "Measures requests" do
       sign_in admin
       get measures_path
       expect(response).to have_http_status(:ok)
-      # get general_measures_path
-      # expect(response).to have_http_status(:ok)
-      # get individual_measures_path
-      # expect(response).to have_http_status(:ok)
-      # get relational_measures_path
-      # expect(response).to have_http_status(:ok)
-      # get community_measures_path
-      # expect(response).to have_http_status(:ok)
-      # get measure_path(measure)
-      # expect(response).to have_http_status(:ok)
-      # get new_measure_path
-      # expect(response).to have_http_status(:ok)
-      # get edit_measure_path(measure)
-      # expect(response).to have_http_status(:ok)
+      get category_measures_path(category: :general)
+      expect(response).to have_http_status(:ok)
+      get measure_path(measure)
+      expect(response).to have_http_status(:ok)
+      get new_measure_path
+      expect(response).to have_http_status(:ok)
+      get edit_measure_path(measure)
+      expect(response).to have_http_status(:ok)
       # post measures_path, params: { measure: measure_attributes }
-      # expect(response).to have_http_status(:ok)
-      # patch measure_path(measure), params: { measure: measure_attributes }
       # expect(response).to redirect_to(measure)
-      # put measure_path(measure), params: { measure: measure_attributes }
-      # expect(response).to redirect_to(measure)
-      # delete measure_path(measure)
-      # expect(response).to redirect_to(measures_path)
+      patch measure_path(measure), params: { measure: measure_attributes }
+      expect(response).to redirect_to(measure)
+      put measure_path(measure), params: { measure: measure_attributes }
+      expect(response).to redirect_to(measure)
+      delete measure_path(measure)
+      expect(response).to redirect_to(measures_path)
+    end
+
+  end
+
+  context 'testing measures post' do
+    it 'should redirect to correct measure' do
+      sign_in admin
+      post measures_path, params: { measure: measure_attributes }
+      expect(response).to redirect_to(measure)
     end
   end
 
