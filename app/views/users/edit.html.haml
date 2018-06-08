@@ -1,6 +1,6 @@
 - provide(:title, 'Edit Profile')
 
-%h1.display-4= "Edit #{@user.to_s} Profile"
+%h1.display-4 Edit Profile
 
 = form_for(@user) do |f|
   = form_errors_for(@user)
@@ -29,4 +29,4 @@
     = f.label :phone
     = f.telephone_field :phone, class: 'form-control'
   .form-group
-    = f.submit "Update", class: 'btn btn-primary'
+    = f.submit 'Update', class: 'btn btn-primary'

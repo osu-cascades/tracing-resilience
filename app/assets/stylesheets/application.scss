@@ -60,6 +60,26 @@ form {
   margin-bottom: 100px;
 }
 
+#error_explanation {
+  @extend .alert;
+  @extend .alert-warning;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.field_with_errors .form-control {
+  @extend .is-invalid;
+}
+
 .btn-primary {
   color: white;
   background-color: $primary-color;
