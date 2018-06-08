@@ -8,22 +8,6 @@ class MeasuresController < ApplicationController
     @measures = Measure.all
   end
 
-  def general
-    @measures = Measure.where(category: :general)
-  end
-
-  def individual
-    @measures = Measure.where(category: :individual)
-  end
-
-  def relational
-    @measures = Measure.where(category: :relational)
-  end
-
-  def community
-    @measures = Measure.where(category: :community)
-  end
-
   def measures
     if params[:category]
       @category = params[:category]

@@ -8,10 +8,6 @@ Rails.application.routes.draw do
 
   resources :measures do
     collection do
-      get :general
-      get :individual
-      get :relational
-      get :community
       get :measures
     end
   end
