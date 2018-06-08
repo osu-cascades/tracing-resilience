@@ -1,9 +1,8 @@
 - provide(:title, @measure.title)
 
+- if current_user.admin?
+  = link_to 'Edit', edit_measure_path(@measure), class: 'btn btn-primary float-right'
+
 %h1.display-4= @measure.title
 %h2= @measure.category.capitalize
 %iframe{:src => "#{url_for(@measure.document)}", style: 'width: 500px; height: 500px;'}
-%br
-%hr
-- if current_user.admin?
-  = link_to 'Edit', edit_measure_path(@measure), class: 'btn btn-primary'

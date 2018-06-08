@@ -4,13 +4,13 @@
 
 %h1.display-4 Community Measures
 
-= pluralize(@measures.size, 'Measure')
+%p= pluralize(@measures.size, 'Measure')
 
 %ul.list-group
   - @measures.each do |measure|
     %li.list-group-item.my-2
-      %h3= link_to measure.title, measure
       - if current_user.admin?
-        = link_to 'Edit', edit_measure_path(measure), class: 'btn btn-sm btn-outline-secondary'
-        |
-        = link_to 'Destroy', measure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'
+        .float-right
+          = link_to 'Edit', edit_measure_path(measure), class: 'btn btn-sm btn-outline-secondary mx-4'
+          = link_to 'Delete', measure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'
+      %h3= link_to measure.title, measure
