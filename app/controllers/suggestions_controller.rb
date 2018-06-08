@@ -2,10 +2,14 @@ class SuggestionsController < ApplicationController
 
   before_action :authenticate_user!
 
-  def new; end
+  def new
+    @suggestion = Suggestion.new
+  end
 
   def create
-    if verify_recaptcha
+    @suggestion = Suggestion.new(suggestion_params)
+
+    if @suggestion.register and verify_recaptcha
       SuggestionMailer.suggestion(current_user, suggestion_params).deliver
       redirect_to root_path, notice: 'Thank you, your suggestion has been sent.'
     else

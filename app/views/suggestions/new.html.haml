@@ -2,7 +2,8 @@
 
 %h1.display-4 Suggest a Resilience Measure
 
-= form_for :suggestion, url: suggestions_path do |f|
+= form_for @suggestion do |f|
+  = form_errors_for(@suggestion)
   .form-group
     = f.label :title
     = f.text_field :title, class: 'form-control'
