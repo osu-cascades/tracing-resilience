@@ -71,8 +71,8 @@ RSpec.describe "Measures requests" do
       expect(response).to have_http_status(:ok)
       get edit_measure_path(measure)
       expect(response).to have_http_status(:ok)
-      # post measures_path, params: { measure: measure_attributes }
-      # expect(response).to redirect_to(measure)
+      post measures_path, params: { measure: measure_attributes }
+      expect(response).to have_http_status(:redirect)
       patch measure_path(measure), params: { measure: measure_attributes }
       expect(response).to redirect_to(measure)
       put measure_path(measure), params: { measure: measure_attributes }
@@ -81,14 +81,6 @@ RSpec.describe "Measures requests" do
       expect(response).to redirect_to(measures_path)
     end
 
-  end
-
-  context 'testing measures post' do
-    it 'should redirect to correct measure' do
-      sign_in admin
-      post measures_path, params: { measure: measure_attributes }
-      expect(response).to redirect_to(measure)
-    end
   end
 
 end
