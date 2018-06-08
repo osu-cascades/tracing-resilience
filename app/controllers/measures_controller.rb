@@ -8,7 +8,7 @@ class MeasuresController < ApplicationController
     @measures = Measure.all
   end
 
-  def measures
+  def category
     if params[:category]
       @category = params[:category]
       @measures = Measure.where(category: @category.to_sym)

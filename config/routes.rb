@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :measures do
     collection do
-      get :measures
+      get :category
     end
   end
 

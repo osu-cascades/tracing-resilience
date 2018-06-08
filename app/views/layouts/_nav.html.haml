@@ -8,13 +8,13 @@
         %li.nav-link
           = link_to 'Home', measures_path
         %li.nav-link
-          = link_to 'General', measures_measures_path(category: :general)
+          = link_to 'General', category_measures_path(category: :general)
         %li.nav-link
-          = link_to 'Individual', measures_measures_path(category: :individual)
+          = link_to 'Individual', category_measures_path(category: :individual)
         %li.nav-link
-          = link_to 'Relational', measures_measures_path(category: :relational)
+          = link_to 'Relational', category_measures_path(category: :relational)
         %li.nav-link
-          = link_to 'Community', measures_measures_path(category: :community)
+          = link_to 'Community', category_measures_path(category: :community)
         %li.nav-item.dropdown
           %a#dropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown"}
             = current_user
