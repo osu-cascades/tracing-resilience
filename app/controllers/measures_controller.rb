@@ -24,6 +24,13 @@ class MeasuresController < ApplicationController
     @measures = Measure.where(category: :community)
   end
 
+  def measures
+    if params[:category]
+      @category = params[:category]
+      @measures = Measure.where(category: @category.to_sym)
+    end
+  end
+
   def show; end
 
   def new

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :individual
       get :relational
       get :community
+      get :measures
     end
   end
 
