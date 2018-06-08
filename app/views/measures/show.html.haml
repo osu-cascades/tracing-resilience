@@ -1,7 +1,7 @@
-%p#notice= notice
-%h1= @measure.title
-%h3= @measure.category.capitalize
-%hr
+- provide(:title, @measure.title)
+
+%h1.display-4= @measure.title
+%h2= @measure.category.capitalize
 %iframe{:src => "#{url_for(@measure.document)}", style: 'width: 500px; height: 500px;'}
 %br
 %hr
