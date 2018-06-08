@@ -9,7 +9,7 @@ class SuggestionsController < ApplicationController
   def create
     @suggestion = Suggestion.new(suggestion_params)
 
-    if @suggestion.register and verify_recaptcha
+    if @suggestion.valid? and verify_recaptcha
       SuggestionMailer.suggestion(current_user, suggestion_params).deliver
       redirect_to root_path, notice: 'Thank you, your suggestion has been sent.'
     else
