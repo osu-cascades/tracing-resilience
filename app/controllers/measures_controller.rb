@@ -6,6 +6,7 @@ class MeasuresController < ApplicationController
 
   def index
     @measures = Measure.all
+    @featured_measure = @measures.detect { |measure| measure.featured == true }
   end
 
   def category

@@ -9,7 +9,7 @@ class Measure < ApplicationRecord
   end
 
   def to_s
-    title
+    self.title
   end
 
   private

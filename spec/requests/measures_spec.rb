@@ -4,6 +4,7 @@ RSpec.describe "Measures requests" do
 
   let(:measure) { create(:individual_measure) }
   let(:measure_attributes) { attributes_for(:individual_measure) }
+  let(:featured_measure) { create(:featured_measure) }
   let(:user) { create(:user) }
   let(:admin) { create(:admin) }
 
@@ -32,6 +33,7 @@ RSpec.describe "Measures requests" do
 
   context "when logged in as a registered user" do
     it "allows listing and viewing" do
+      controller.instance_variable_get(:@featured_measure)
       sign_in user
       get measures_path
       expect(response).to have_http_status(:ok)
