@@ -32,9 +32,9 @@ RSpec.describe 'Suggesting a measure' do
     expect(page).to have_content('4 errors prohibited this suggestion from being saved:')
     page.find('#error_explanation').tap do |error_explanations|
       expect(error_explanations).to have_content("Title can't be blank")
-      expect(error_explanations).to have_content("Category can't be blank")
       expect(error_explanations).to have_content("Reference can't be blank")
       expect(error_explanations).to have_content("Description can't be blank")
+      expect(error_explanations).to have_content("Category must be selected")
     end
     expect(ActionMailer::Base.deliveries.size).to eq(0)
   end
