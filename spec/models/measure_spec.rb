@@ -24,4 +24,18 @@ RSpec.describe Measure, type: :model do
     expect(Measure.new(title: 'FAKE').to_s).to eq 'FAKE'
   end
 
+  describe 'featured' do
+    it 'ensures there is only one featured measure' do
+      unfeatured_measure = create(:measure)
+      featured_measure = create(:featured_measure)
+      expect(unfeatured_measure).to_not be_featured
+      expect(featured_measure).to be_featured
+      unfeatured_measure.featured = true
+      unfeatured_measure.save!
+      featured_measures = Measure.where('featured = true')
+      expect(featured_measures.count).to eq(1)
+      expect(featured_measures).to include(unfeatured_measure)
+    end
+  end
+
 end
