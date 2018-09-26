@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :measure do
     title "Example Measure Title"
+    description "Fake description"
+    details "Fake details"
     category :general
     featured false
     after(:build) do |measure|

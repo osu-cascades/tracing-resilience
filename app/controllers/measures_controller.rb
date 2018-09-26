@@ -57,7 +57,7 @@ class MeasuresController < ApplicationController
   end
 
   def measure_params
-    params.require(:measure).permit(:title, :category, :document, :featured)
+    params.require(:measure).permit(:title, :description, :details, :category, :document, :featured)
   end
 
 end
