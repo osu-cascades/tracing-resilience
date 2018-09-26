@@ -3,6 +3,13 @@
 - if current_user.admin?
   = link_to 'Edit', edit_measure_path(@measure), class: 'btn btn-primary float-right'
 
-%h1.display-4= @measure.title
-%h2= @measure.category.capitalize
-%iframe{:src => "#{url_for(@measure.document)}", style: 'width: 500px; height: 500px;'}
+%h1.display-4.mb-5= @measure.title
+.row
+  .col
+    %iframe{:src => "#{url_for(@measure.document)}", style: 'width: 100%; height: 46em;'}
+  .col
+    %h2= "A #{@measure.category} resilience measure"
+    %p= @measure.description
+    %p= @measure.details.presence || "No details have been provided for this measure."
+    %p= "Added on #{@measure.created_at.to_s(:long)}."
+    %p= "Last updated on #{@measure.created_at.to_s(:long)}."

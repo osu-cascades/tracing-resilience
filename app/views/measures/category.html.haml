@@ -2,7 +2,7 @@
 
 = new_measure_link if current_user.admin?
 
-%h1.display-4 #{@category.capitalize} Measures
+%h1.display-4 #{@category.capitalize} Resilience Measures
 
 %p= pluralize(@measures.size, 'Measure')
 
@@ -14,3 +14,4 @@
           = link_to 'Edit', edit_measure_path(measure), class: 'btn btn-sm btn-outline-secondary mx-4'
           = link_to 'Delete', measure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'
       %h3= link_to measure.title, measure
+      %p.mb-0= measure.description
