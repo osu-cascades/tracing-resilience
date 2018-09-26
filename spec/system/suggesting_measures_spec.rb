@@ -23,8 +23,20 @@ RSpec.describe 'Suggesting a measure' do
     expect(email.subject).to eq("TRACES Resilience Measure Suggestion")
   end
 
-  xscenario 'failure, with invalid form completion' do
-    #TODO
+  scenario 'failure, with invalid form completion' do
+    fill_in 'Title', with: ''
+    select 'Choose...', from: 'Category'
+    fill_in 'Reference', with: ''
+    fill_in 'Description', with: ''
+    click_on 'Submit'
+    expect(page).to have_content('4 errors prohibited this suggestion from being saved:')
+    page.find('#error_explanation').tap do |error_explanations|
+      expect(error_explanations).to have_content("Title can't be blank")
+      expect(error_explanations).to have_content("Reference can't be blank")
+      expect(error_explanations).to have_content("Description can't be blank")
+      expect(error_explanations).to have_content("Category must be selected")
+    end
+    expect(ActionMailer::Base.deliveries.size).to eq(0)
   end
 
 end
