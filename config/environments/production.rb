@@ -104,3 +104,20 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 end
+
+# https://github.com/airbrake/airbrake-ruby#configuration
+Airbrake.configure do |c|
+  # https://github.com/airbrake/airbrake-ruby#project_id--project_key
+  c.project_id = ENV['AIRBRAKE_PROJECT_ID']
+  c.project_key = ENV['AIRBRAKE_API_KEY']
+  # https://github.com/airbrake/airbrake-ruby#root_directory
+  c.root_directory = Rails.root
+  # https://github.com/airbrake/airbrake-ruby#logger
+  c.logger = Rails.logger
+  # https://github.com/airbrake/airbrake-ruby#environment
+  c.environment = Rails.env
+  # https://github.com/airbrake/airbrake-ruby#ignore_environments
+  c.ignore_environments = %w(test)
+  # https://github.com/airbrake/airbrake-ruby#blacklist_keys
+  c.blacklist_keys = [/password/i, /authorization/i]
+end
