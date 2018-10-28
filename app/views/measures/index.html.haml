@@ -5,7 +5,8 @@
 - if @featured_measure
   %h1.display-4 Featured Measure
   %h3= "#{@featured_measure.category.capitalize} Measure: #{@featured_measure.title}"
-  %iframe{:src => "#{url_for(@featured_measure.document)}", style: 'width: 300px; height: 400px;'}
+  - if @featured_measure.document.attached?
+    %iframe{:src => "#{url_for(@featured_measure.document)}", style: 'width: 300px; height: 400px;'}
   %p= link_to 'View featured measure', measure_path(@featured_measure), class: 'btn btn-primary'
   %hr
 
