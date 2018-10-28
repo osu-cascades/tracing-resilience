@@ -11,7 +11,7 @@ RSpec.describe 'Measure management' do
     sign_in(admin)
   end
 
-  context 'admin creates new measure' do
+  describe 'admin creates new measure' do
 
     before do
       visit new_measure_path
@@ -38,7 +38,7 @@ RSpec.describe 'Measure management' do
     end
   end
 
-  context 'admin edits measure' do
+  describe 'admin edits measure' do
 
     before do
       visit edit_measure_path(measure)
@@ -65,25 +65,25 @@ RSpec.describe 'Measure management' do
     end
   end
 
-  context 'with an existing featured measure' do
+  describe 'admin sets new featured measure' do
+    context 'with an existing featured measure' do
+      before do
+        visit new_measure_path
+        create_new_measure(category: 'Relational', featured: true)
+      end
 
-    before do
-      visit new_measure_path
-      create_new_measure(category: 'Relational', featured: true)
+      scenario 'only one measure is featured' do
+        expect(Measure.count).to eq(1)
+        expect(featured_measure_count).to eq(1)
+        expect(Measure.first.featured).to equal(true)
+
+        create_new_measure(category: 'Individual', featured: true)
+        expect(Measure.count).to eq(2)
+        expect(featured_measure_count).to eq(1)
+        expect(Measure.first.featured).to equal(false)
+        expect(Measure.last.featured).to equal(true)
+      end
     end
-
-    scenario 'admin sets new featured measure' do
-      expect(Measure.count).to eq(1)
-      expect(featured_measure_count).to eq(1)
-      expect(Measure.first.featured).to equal(true)
-
-      create_new_measure(category: 'Individual', featured: true)
-      expect(Measure.count).to eq(2)
-      expect(featured_measure_count).to eq(1)
-      expect(Measure.first.featured).to equal(false)
-      expect(Measure.last.featured).to equal(true)
-    end
-
   end
 
 end
