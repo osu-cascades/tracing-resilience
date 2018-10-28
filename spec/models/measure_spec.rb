@@ -8,6 +8,8 @@ RSpec.describe Measure, type: :model do
     end
   end
 
+  it { is_expected.to respond_to(:tag_list) }
+
   describe '::category_options' do
     it 'returns a Hash of Name => name pairs' do
       category_hash = {

@@ -3,6 +3,7 @@ class Measure < ApplicationRecord
   has_one_attached :document
   validates_presence_of :title, :category, :description
   after_save :ensure_single_featured_measure
+  acts_as_taggable
 
   def self.category_options
     Measure.categories.keys.map { |k| [k.to_s.capitalize, k] }.to_h
