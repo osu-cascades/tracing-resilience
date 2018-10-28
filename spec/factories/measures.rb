@@ -4,6 +4,7 @@ FactoryBot.define do
     description { "Fake description" }
     details { "Fake details" }
     category { :general }
+    tag_list { 'alpha, beta'}
     featured { false }
     after(:build) do |measure|
       measure.document.attach(io: File.open(Rails.root.join('spec', 'factories', 'attachments', 'example.pdf')), filename: 'example.pdf', content_type: 'application/pdf')

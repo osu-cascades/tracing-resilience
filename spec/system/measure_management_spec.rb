@@ -22,6 +22,7 @@ RSpec.describe 'Measure management' do
       fill_in('Description', with: 'Fake description')
       fill_in('Details', with: 'Fake details')
       select('General', from: 'Category')
+      fill_in('Tags', with: 'Alpha, Beta')
       page.attach_file('Document', Rails.root + 'spec/factories/attachments/example.pdf')
       click_on('Save')
       expect(page).to have_content('Measure was successfully created.')
