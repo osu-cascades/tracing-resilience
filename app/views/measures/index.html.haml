@@ -4,19 +4,19 @@
   .col-lg-3
     %h2 General
     %p TODO
-    %p= link_to 'Browse general measures »', category_measures_path(category: :general)
+    %p= link_to 'Browse general measures »', category_measures_path(category: :general), class: 'btn btn-sm btn-primary'
   .col-lg-3
     %h2 Individual
     %p TODO
-    %p= link_to 'Browse individual measures »', category_measures_path(category: :individual)
+    %p= link_to 'Browse individual measures »', category_measures_path(category: :individual), class: 'btn btn-sm btn-primary'
   .col-lg-3
     %h2 Relational
     %p TODO
-    %p= link_to 'Browse relational measures »', category_measures_path(category: :relational)
+    %p= link_to 'Browse relational measures »', category_measures_path(category: :relational), class: 'btn btn-sm btn-primary'
   .col-lg-3
     %h2 Community
     %p TODO
-    %p= link_to 'Browse community measures »', category_measures_path(category: :community)
+    %p= link_to 'Browse community measures »', category_measures_path(category: :community), class: 'btn btn-sm btn-primary'
 
 %p.text-center.my-5= link_to 'Have a suggestion for a new measure?', new_suggestion_path, class: 'btn btn-primary'
 
