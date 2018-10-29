@@ -1,15 +1,5 @@
 - provide(:title, 'Resilience Measures')
 
-= new_measure_link if current_user.admin?
-
-- if @featured_measure
-  %h1.display-4 Featured Measure
-  %h3= "#{@featured_measure.category.capitalize} Measure: #{@featured_measure.title}"
-  - if @featured_measure.document.attached?
-    %iframe{:src => "#{url_for(@featured_measure.document)}", style: 'width: 300px; height: 400px;'}
-  %p= link_to 'View featured measure', measure_path(@featured_measure), class: 'btn btn-primary'
-  %hr
-
 .row.sub-banner
   .col-lg-3
     %h2 General
@@ -29,3 +19,12 @@
     %p= link_to 'Browse community measures »', category_measures_path(category: :community)
 
 %p.text-center.my-5= link_to 'Have a suggestion for a new measure?', new_suggestion_path, class: 'btn btn-primary'
+
+- if @featured_measure
+  %h1.display-4.text-center Featured Measure
+  %h2.text-center= @featured_measure.title
+  %p.text-center= @featured_measure.description
+  %p.text-center= @featured_measure.details.presence || "No details have been provided for this measure."
+  - if @featured_measure.document.attached?
+    %iframe.measure_document{:src => "#{url_for(@featured_measure.document)}"}
+  %p.text-center= link_to 'View details', measure_path(@featured_measure), class: 'btn btn-primary'
