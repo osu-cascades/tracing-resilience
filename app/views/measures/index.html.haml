@@ -27,4 +27,6 @@
   %p.text-center= @featured_measure.details.presence || "No details have been provided for this measure."
   - if @featured_measure.document.attached?
     %iframe.measure_document{:src => "#{url_for(@featured_measure.document)}"}
+  - else
+    %h4.text-center No document has been provided.
   %p.text-center= link_to 'View details', measure_path(@featured_measure), class: 'btn btn-primary'

@@ -1,8 +1,9 @@
 - provide(:title, 'Edit Resilience Measure')
 
 %h1.display-4 Edit Resilience Measure
-- if @measure.document.attached?
-  .float-right
+.float-right
+  - if @measure.document.attached?
     %iframe{:src => "#{url_for(@measure.document)}", style: 'width: 400px; height: 550px;'}
-
+  - else
+    %h4 No document has been provided.
 = render 'form'
