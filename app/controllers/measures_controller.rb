@@ -5,21 +5,21 @@ class MeasuresController < ApplicationController
   before_action :set_measure, only: [:show, :edit, :update, :destroy]
 
   def index
-    @measures = Measure.all
+    @measures = Measure.order(:title)
     @featured_measure = @measures.detect { |measure| measure.featured == true }
   end
 
   def category
     if params[:category]
       @category = params[:category]
-      @measures = Measure.where(category: @category.to_sym)
+      @measures = Measure.where(category: @category.to_sym).order(:title)
     end
   end
 
   def tag
     if params[:tag]
       @category = params[:tag]
-      @measures = Measure.tagged_with(@category)
+      @measures = Measure.tagged_with(@category).order(:title)
       render :category
     end
   end
