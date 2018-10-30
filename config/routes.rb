@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     collection do
       get :category
     end
+    collection do
+      get :tag
+    end
   end
 
   resources :suggestions, only: [:new, :create]

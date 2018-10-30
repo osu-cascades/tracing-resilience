@@ -16,6 +16,14 @@ class MeasuresController < ApplicationController
     end
   end
 
+  def tag
+    if params[:tag]
+      @category = params[:tag]
+      @measures = Measure.tagged_with(@category)
+      render :category
+    end
+  end
+
   def show; end
 
   def new
