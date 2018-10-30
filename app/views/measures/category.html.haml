@@ -15,3 +15,7 @@
           = link_to 'Delete', measure, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'
       %h3= link_to measure.title, measure
       %p.mb-0= measure.description
+      .tag_list
+        - measure.tag_list.each do |tag|
+          %span.tag= tag
+

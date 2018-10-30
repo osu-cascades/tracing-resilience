@@ -12,7 +12,9 @@
       %h4 No document has been provided.
   .col
     %h2= "A #{@measure.category} resilience measure"
-    %p= @measure.tag_list
+    .tag_list
+      - @measure.tag_list.each do |tag|
+        %span.tag= tag
     %p= @measure.description
     %p= @measure.details.presence || "No details have been provided for this measure."
     %p= "Added on #{@measure.created_at.to_s(:long)}."
