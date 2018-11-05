@@ -8,6 +8,8 @@
         %li.nav-link
           = link_to 'Home', measures_path
         %li.nav-link
+          = link_to 'Shared', tag_measures_path(tag: 'shared')
+        %li.nav-link
           = link_to 'General', category_measures_path(category: :general)
         %li.nav-link
           = link_to 'Individual', category_measures_path(category: :individual)
