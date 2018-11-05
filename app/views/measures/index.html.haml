@@ -1,21 +1,31 @@
 - provide(:title, 'Resilience Measures')
 
 .row.sub-banner
-  .col-lg-3
+  .col.col-lg-3
     %h2 General
-    %p General measures are less specific, and depict an overall profile of resilience across psychological and physical criteria.
-    %p= link_to 'Browse general measures »', category_measures_path(category: :general), class: 'btn btn-sm btn-primary'
-  .col-lg-3
+  .col.col-lg-3
     %h2 Individual
-    %p Individual measures focus on characterstics, such as a positive self-image, and developmental skills, such as problem-solving.
-    %p= link_to 'Browse individual measures »', category_measures_path(category: :individual), class: 'btn btn-sm btn-primary'
-  .col-lg-3
+  .col.col-lg-3
     %h2 Relational
-    %p Relational factors include parenting competencies, caregiver well-being, positive peers, or living with family members.
-    %p= link_to 'Browse relational measures »', category_measures_path(category: :relational), class: 'btn btn-sm btn-primary'
-  .col-lg-3
+  .col.col-lg-3
     %h2 Community
+.row
+  .col.col-lg-3
+    %p General measures are less specific, and depict an overall profile of resilience across psychological and physical criteria.
+  .col.col-lg-3
+    %p Individual measures focus on characterstics, such as a positive self-image, and developmental skills, such as problem-solving.
+  .col.col-lg-3
+    %p Relational factors include parenting competencies, caregiver well-being, positive peers, or living with family members.
+  .col.col-lg-3
     %p Community-level factors focus on positive school environments, stable living situations, and economic opportunities.
+.row
+  .col
+    %p= link_to 'Browse general measures »', category_measures_path(category: :general), class: 'btn btn-sm btn-primary'
+  .col
+    %p= link_to 'Browse individual measures »', category_measures_path(category: :individual), class: 'btn btn-sm btn-primary'
+  .col
+    %p= link_to 'Browse relational measures »', category_measures_path(category: :relational), class: 'btn btn-sm btn-primary'
+  .col
     %p= link_to 'Browse community measures »', category_measures_path(category: :community), class: 'btn btn-sm btn-primary'
 
 %p.text-center.my-5= link_to 'Have a suggestion for a new measure?', new_suggestion_path, class: 'btn btn-primary'
