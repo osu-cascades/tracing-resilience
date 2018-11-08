@@ -175,4 +175,13 @@ iframe.measure_document {
   border: 1px solid #CCC;
   background-color: #E5F4D4;
   padding: 4px;
+  line-height: 2em;
+}
+
+.tag:hover {
+  background: $primary-color;
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
 }
