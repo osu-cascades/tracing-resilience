@@ -11,7 +11,7 @@ class SuggestionsController < ApplicationController
 
     if @suggestion.valid? and verify_recaptcha
       SuggestionMailer.suggestion(current_user, suggestion_params).deliver
-      redirect_to root_path, notice: 'Thank you, your suggestion has been sent.'
+      redirect_to measures_url, notice: 'Thank you, your suggestion has been sent.'
     else
       flash[:recaptcha_error]
       render :new
