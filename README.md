@@ -49,4 +49,4 @@ run rspec with spring. To use it, just run `guard` as usual.
 
 TODO
 
-&copy; 2018 Nathan Struhs, Yong Bakos. All rights reserved.
+&copy; 2019 Nathan Struhs, Yong Bakos. All rights reserved.
