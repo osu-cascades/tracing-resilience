@@ -42,7 +42,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.9.0'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
 end
