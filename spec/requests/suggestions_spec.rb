@@ -19,7 +19,7 @@ RSpec.describe "Suggestions requests" do
       get new_suggestion_path
       expect(response).to have_http_status(:ok)
       post suggestions_path, params: { suggestion: {title: 'Title', category: :general, reference: 'Example', description: 'Example'} }
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(measures_url)
     end
   end
 
