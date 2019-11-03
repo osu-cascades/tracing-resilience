@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.6.5'
 
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'aws-sdk-s3', require: false
@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 2.7.0'
 gem 'jquery-rails'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.12'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 5.2.3'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
